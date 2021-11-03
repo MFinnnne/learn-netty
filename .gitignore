@@ -1,0 +1,5 @@
+# Project exclude paths
+/netty01/.gradle/
+/netty01/build/
+/netty01/build/classes/java/main/
+/netty01/build/classes/java/test/
