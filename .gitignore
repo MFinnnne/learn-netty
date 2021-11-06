@@ -3,3 +3,5 @@
 /netty01/build/
 /netty01/build/classes/java/main/
 /netty01/build/classes/java/test/
+/**/.idea
+/**/gradle
