@@ -1,0 +1,1 @@
+add_library(testprimitive_TestJNIPrimitive SHARED jni.cpp)
