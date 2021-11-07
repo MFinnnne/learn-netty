@@ -1,1 +1,2 @@
-add_library(testprimitive_TestJNIPrimitive SHARED jni.cpp)
+add_library(test-jna SHARED test-jna.cpp)
+#add_executable(runtest test-jna.cpp)
