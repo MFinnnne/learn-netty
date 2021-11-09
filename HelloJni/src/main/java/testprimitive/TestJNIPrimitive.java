@@ -8,7 +8,7 @@ package testprimitive;
  **/
 public class TestJNIPrimitive {
     static {
-        System.loadLibrary("libtestprimitive_TestJNIPrimitive");
+        System.loadLibrary("jni");
     }
 
     private int number = 88;
@@ -51,6 +51,7 @@ public class TestJNIPrimitive {
     private native Integer getIntegerObject(int number);
 
     public static void main(String args[]) {
+//        System.out.println("hello");
         System.out.println("transfer int :In Java, the average is " + new TestJNIPrimitive().average(3, 2));
         System.out.println("transfer string ：In Java, the transString is " + new TestJNIPrimitive().transString("hello native"));
         final double[] sumAndAverage = new TestJNIPrimitive().sumAndAverage(new int[]{1, 2, 3, 4});

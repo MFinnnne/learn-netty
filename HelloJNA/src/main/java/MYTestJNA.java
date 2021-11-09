@@ -12,7 +12,7 @@ import com.sun.jna.ptr.PointerByReference;
 public interface MYTestJNA extends Library {
 
     MYTestJNA INSTANCE =
-            Native.load("libtest-jna",
+            Native.load("libjna",
                     MYTestJNA.class);
 
     void sayHello();
@@ -21,12 +21,6 @@ public interface MYTestJNA extends Library {
     int testReturnInt();
 
     void returnArray(double[] d, int[] a, String b, int length);
-
-    void sendString(String val);
-
-    void getString(PointerByReference val);
-
-    void cleanup(Pointer p);
 
 
 }
