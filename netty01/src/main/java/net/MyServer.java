@@ -1,6 +1,10 @@
 package net;
 
+
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.ILoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import util.ByteBufferUtil;
 
 import java.io.IOException;
@@ -10,8 +14,9 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.ArrayList;
 
-@Slf4j
 public class MyServer {
+    final static Logger log = LoggerFactory.getILoggerFactory().getLogger(MyServer.class.getName());
+
     public static void main(String[] args) throws IOException {
         ByteBuffer byteBuffer = ByteBuffer.allocate(16);
         ServerSocketChannel socketChannel = ServerSocketChannel.open();
@@ -20,16 +25,19 @@ public class MyServer {
         while (true) {
             log.debug("connecting...");
             SocketChannel sc = socketChannel.accept();
-            log.debug("connected....{}",sc);
+            if (sc == null) {
+                continue;
+            }
+            sc.configureBlocking(false);
+            log.debug("connected....{}", sc);
             channels.add(sc);
-
             for (SocketChannel channel : channels) {
-                log.debug("before read ...{}",channel);
+                log.debug("before read ...{}", channel);
                 channel.read(byteBuffer);
                 byteBuffer.flip();
                 ByteBufferUtil.debugRead(byteBuffer);
                 byteBuffer.clear();
-                log.debug("after read ...{}",channel);
+                log.debug("after read ...{}", channel);
             }
         }
     }
