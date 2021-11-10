@@ -19,15 +19,12 @@ dependencies {
 
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // https://mvnrepository.com/artifact/io.netty/netty-all
-    implementation group: 'io.netty', name: 'netty-all', version: '4.1.69.Final'
-// https://mvnrepository.com/artifact/org.projectlombok/lombok
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    implementation group: 'io.netty', name: 'netty-all', version: '4.1.39.Final'
 // https://mvnrepository.com/artifact/com.google.guava/guava
     implementation group: 'com.google.guava', name: 'guava', version: '31.0.1-jre'
-    compile 'org.slf4j:slf4j-api:1.7.14'
-    compile 'ch.qos.logback:logback-core:1.1.3'
-    compile 'ch.qos.logback:logback-classic:1.1.3'
-
+    compile 'org.slf4j:slf4j-api:1.7.32'
+    compile 'ch.qos.logback:logback-core:1.2.6'
+    compile 'ch.qos.logback:logback-classic:1.2.6'
 
 }
 
