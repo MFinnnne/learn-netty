@@ -1,4 +1,3 @@
-import lombok.extern.slf4j.Slf4j;
 import util.ByteBufferUtil;
 
 import java.nio.ByteBuffer;
@@ -8,7 +7,6 @@ import java.nio.ByteBuffer;
  * @version 1.0
  * @date 2021/11/3 22:56
  **/
-@Slf4j
 public class TestByteBufferReadWrite {
     public static void main(String[] args) {
         ByteBuffer buffer = ByteBuffer.allocate(10);
