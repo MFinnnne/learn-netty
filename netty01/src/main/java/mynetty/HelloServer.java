@@ -24,6 +24,7 @@ public class HelloServer {
                 .group(new NioEventLoopGroup(2)) // 1
                 .channel(NioServerSocketChannel.class) // 2
                 .childHandler(new ChannelInitializer<NioSocketChannel>() { // 3
+                    @Override
                     protected void initChannel(NioSocketChannel ch) {
                         ch.pipeline().addLast(new LoggingHandler(LogLevel.DEBUG));
                         ch.pipeline().addLast(normalworker,"myhandler",new ChannelInboundHandlerAdapter(){
